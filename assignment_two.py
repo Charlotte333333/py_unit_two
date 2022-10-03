@@ -20,9 +20,21 @@ if concert.find("taylor")!=-1:
 else:
     print("okay, I hear those tickets are expensive.")
 
-cost = input("how much would those tickets cost?")
+cost = float(input("how much would those tickets cost?"))
+print("JEEZ!")
 
+length = int(input("How long is your loan in years?"))
+monthlyLength = length * 12
 
+annualIntrestRate = float(input("How much is your annual interest rate?"))
+r= float((annualIntrestRate/100)/12)
+monththlypayment = ((r * cost) / (1 - ( 1 + r) ** -monthlyLength))
+print(round(monththlypayment,2))
+totalCost = (monththlypayment*monthlyLength)
+
+print("Your monthly payment for the concert is ",monththlypayment , "that is a total of" ,totalCost,"")
+
+print("bye ",name,"")
 
 
 
